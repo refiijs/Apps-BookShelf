@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>BookShelf Apps</title>
+</head>
+<body>
+    <header>
+        <nav class="nav container">
+            <h2 class="nav_apps">BookShelf Apps</h2>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="welcome">
+            <div class="row">
+                <div class="column">
+                    <h2>Hai, Selamat Datang</h2>
+                    <p>BookShelf akan bantu kamu dalam mengatur aktivitas literasimu</p>
+                </div>
+
+                <div class="column">
+                  <img src="Images/literasi.png" alt="people" class="welcome_img" />
+              </div>
+
+                <div class="button-container">
+                    <button class="read-button">
+                        <img src="Images/done.png" alt="Read">
+                        <span>Read</span>
+                    </button>
+                    <button class="unread-button">
+                        <img src="Images/onprogres.png" alt="Unread">
+                        <span>On Progress</span>
+                    </button>
+                    <button class="add-button">
+                        <img src="Images/add.png" alt="Add">
+                        <span>Add</span>
+                    </button>
+                </div>
+              </div>
+            </div>
+        </section>
+    </main>
+
+   
+    <div class="content">
+        <div class="col-1">
+            <div class="user-information my-container">
+                <div class="profil-img">
+                    <img src="Images/profil.jpg" alt="Avatar" />
+                </div>
+                <h1 class="profil-name">Refi Junitasari</h1>
+                <p class="profil-bio"><i class="fi-sr-broom"></i> Front-End & Back-End Dev </p>
+                <ul>
+                    <li>
+                        <p>Jumlah Buku</p>
+                        <br>
+                        <h4 id="jumlahBuku">20</h4>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-1">
+          <div id="modal">
+            <section class="my-container">
+                <h2>Tambah Buku Baru</h2>
+                <form id="form">
+                    <div class="input-group">
+                        <input type="text" id="title" placeholder="Judul Buku" class="input-form"
+                            maxlength="120" pattern="^[a-zA-Z0-9_ ]*$" required />
+                    </div>
+                    <div class="input-group">
+                        <input type="text" id="author" placeholder="Author" class="input-form"
+                            maxlength="60" pattern="^[a-zA-Z0-9_ ]*$" required />
+                    </div>
+                    <div class="input-group">
+                        <input type="date" id="year" 
+                            class="input-form" min="1900" max="2026" />
+                    </div>
+                    <div class="status">
+                        <input type="checkbox" id="status" name="status"value="Dibaca">
+                        <label for="vehicle2"> Selesai dibaca</label><br>
+                    </div>
+                    <div class="button-group">
+                        <button type="submit" id="save">Simpan</button>
+                    </div>
+                </form>
+            </section>
+
+            <div id="modal-edit">
+              <section class="my-container">
+                <h2>Edit Buku</h2>
+                <form id="form-edit">
+                  <div class="input-group">
+                    <input type="text" id="title-edit" placeholder="Judul Buku" class="input-form" maxlength="120" pattern="^[a-zA-Z0-9_ ]*$" required />
+                  </div>
+                  <div class="input-group">
+                    <input type="text" id="author-edit" placeholder="Author" class="input-form" maxlength="60" pattern="^[a-zA-Z0-9_ ]*$" required />
+                  </div>
+                  <div class="input-group">
+                    <input type="date" id="year-edit" class="input-form" min="1900" max="2026" />
+                  </div>
+                  <div class="status">
+                    <input type="checkbox" id="status-edit" name="status-edit" value="Dibaca" />
+                    <label for="status-edit"> Selesai dibaca</label><br />
+                  </div>
+                  <div class="button-group">
+                    <button type="button" id="update">Simpan Perubahan</button>
+                    <button type="button" id="cancel-edit">Batal</button>
+                  </div>
+                </form>
+              </section>
+            </div>
+            
+            </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-2">
+        <div class="content-book">
+        <h4>Selesai Dibaca</h4>
+        <div class="read" id="read"> <!-- Tambahkan id="read" di sini -->
+        </div>
+
+        <h4>On Progres Dibaca</h4>  
+        <div class="unread" id="unread"> <!-- Tambahkan id="unread" di sini -->
+        </div>
+      </div>
+    </div>
+    
+
+  
+
+
+    <script src="main.js"></script>
+    <script src="strorage.js"></script>
+    
+
+    <footer>
+        <p>Hak Cipta &copy; 2023 BookShelf Apps by Refi Junitasari</p>
+    </footer>
+</body>
+</html>
